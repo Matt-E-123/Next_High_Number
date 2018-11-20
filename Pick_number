@@ -1,0 +1,19 @@
+###Here the user will input the 9 digit number, this number will also be turned into an int
+starting_number= raw_input("Hello friend! Please enter a nine digit number where no two digits are the same: ")
+next_number = int(starting_number) + 1
+digits1 = set(starting_number)
+x = False
+
+###While statement to setup a comparison between the set of starting number and the number when you add one
+while not x:
+    next_number += 1
+    digits2 = set(str(next_number))
+    x = len(digits2) == 9 and digits1 == digits2
+    if next_number > 987654321:
+        print ("The next highest number is: ", next_number)
+    
+    
+if x:
+    print(next_number)
+else:
+    print("Ya messed up somewhere! I'm sorry, man.")
